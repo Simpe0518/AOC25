@@ -22,5 +22,3 @@ for line in batteries:
 
 print("part 1: " + str(sum_1))
 print("part 2: " + str(sum_2))
-
-
