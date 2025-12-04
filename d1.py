@@ -22,19 +22,11 @@ for line in instructions:
 ### part 2 ###
 dial = 50 
 for line in instructions: 
-    if line[0] == 'R':
-        for i in range(int(line[1:])):
-            dial += 1
-            if dial % 100 == 0:
-                cntr_2 += 1
-    elif line[0] == 'L':
-        for i in range(int(line[1:])):
-            dial -= 1
-            if dial % 100 == 0:
-                cntr_2 += 1
-    else:
-        raise Exception("Bad input")
-    
+    tick = (1 if line[0] == 'R' else -1)
+    for i in range(int(line[1:])):
+        dial += tick
+        if dial % 100 == 0:
+            cntr_2 += 1
 
-print(cntr)
-print(cntr_2)
+print("part 1: " + str(cntr))
+print("part 2: " + str(cntr_2))
