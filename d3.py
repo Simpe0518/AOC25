@@ -12,14 +12,12 @@ for line in batteries:
     second = max(line[line.index(first)+1:])
     sum_1 += int(str(first) + str(second))
 
-
 ### part 2 ###
 for line in batteries:
     battery = ""
     for i in range(11,-1,-1):
         battery = battery + str(max(line[:len(line)-i]))
         line = line[line.index(int(battery[-1]))+1:]
-    print(battery)
     sum_2 += int(battery)
 
 print("part 1: " + str(sum_1))
